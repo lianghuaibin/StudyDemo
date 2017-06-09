@@ -1,0 +1,9 @@
+<html>
+<body>
+亲爱的${username!"无名"}，你好！
+<br>
+    ${message!}
+<br>
+${str!}
+</body>
+</html>
