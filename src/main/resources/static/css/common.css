@@ -1,0 +1,56 @@
+@charset "utf-8";
+em{ font-style:normal;}
+a,a:hover{ text-decoration:none;}
+/*float*/
+.fl{ float:left;}
+.fn{ float:none;}
+.fr{ float:right;}
+.clear{clear:both; height:0; overflow:hidden;}
+/*通用table list样式 start*/
+.contentList{
+    border:1px solid #d8d8d8;
+    border-radius:5px;
+    padding-bottom:20px;
+    min-height:530px;
+    font-family:"宋体"; font-size:12px; color:#333; min-width:990px;
+}
+/*通用table list样式 end*/
+/*pages 翻页样式 start*/
+.pages{}
+.pages a{
+    margin:0 1px;
+    display:inline-block;
+    padding:0 8px;
+    border:1px solid #d8d8d8;
+    border-radius:5px;
+    line-height:22px;
+    color:#0095cd;
+}
+.pages a:hover{
+    background:#d8d8d8;
+}
+.pages a.cur{
+    background:none;
+    color:#e4393c;
+    border:1px solid #fff;
+}
+.pages a:hover .cur{ background:none;}
+.pages a.disable{
+    background:#f9f9f9;
+    color:#ccc;
+}
+.pages em{ margin-right:5px;}
+.pages em.sum{margin-left:10px;}
+.input40{width:30px;}
+.button_page{
+    /*border-radius:5px;
+    background:#e5e5e5;
+    padding:0 20px;
+    color:#333;
++padding:0;
+    cursor:pointer;*/
+    width: 54px;
+    height:24px;
+}
+/*.button_page:hover{background:#d1d1d1;}*/
+/*pages 翻页样式 end*/

@@ -14,6 +14,11 @@
 	<description>Spring Boot Web Static Sample</description>
 	<version>1.0-SNAPSHOT</version>
 	<url>http://projects.spring.io/spring-boot/</url>
+	<properties>
+
+		<fastjson.version>1.2.28</fastjson.version>
+
+	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -22,6 +27,10 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-freemarker</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-jdbc</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -44,11 +53,33 @@
 			<artifactId>jquery</artifactId>
 			<version>2.0.3-1</version>
 		</dependency>
-		<!--<dependency>
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>${fastjson.version}</version>
+		</dependency>
+		<!-- ibatis 数据库连接 start -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>druid</artifactId>
+			<version>1.0.11</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+			<version>3.2.18.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.ibatis</groupId>
+			<artifactId>ibatis-sqlmap</artifactId>
+			<version>2.3.4.726</version>
+		</dependency>
+		<dependency>
 			<groupId>com.lhb.plug.dynamicibatis</groupId>
 			<artifactId>dynamic-ibatis</artifactId>
 			<version>1.0-SNAPSHOT</version>
-		</dependency>-->
+		</dependency>
+		<!-- ibatis 数据库连接 end -->
 	</dependencies>
 	<build>
 		<plugins>

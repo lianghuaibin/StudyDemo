@@ -1,36 +1,62 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	                       http://www.springframework.org/schema/beans/spring-beans.xsd
+	                       http://www.springframework.org/schema/tx
+                           http://www.springframework.org/schema/tx/spring-tx.xsd"
        default-autowire="byName">
 
-
-    <!-- 事务配置(写库) -->
-    <!--<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-        <property name="dataSource" ref="writeDataSource"></property>
-    </bean>-->
-
-    <!-- API Dao 配置-->
-    <!--<bean id="apiWriteSqlMapClient" class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
-        <property name="configLocations">
-            <list>
-                <value>classpath*:sqlmap-api-config.xml</value>
-            </list>
-        </property>
-        <property name="dataSource" ref="writeDataSource"/>
+    <bean id="apiDataSource" class="com.alibaba.druid.pool.DruidDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://127.0.0.1:3306/lhb?useUnicode=true"/>
+        <property name="username" value="lhb"/>
+        <property name="password" value="12345678"/>
+        <property name="maxActive" value="50"/>
+        <property name="maxIdle" value="10"/>
+        <property name="minIdle" value="2"/>
+        <property name="initialSize" value="10"/>
+        <!-- 连接被泄露时是否打印 -->
+        <property name="logAbandoned" value="true"/>
+        <!--removeAbandoned: 是否自动回收超时连接-->
+        <property name="removeAbandoned" value="true"/>
+        <!--removeAbandonedTimeout: 超时时间(以秒数为单位)-->
+        <property name="removeAbandonedTimeout" value="30"/>
+        <!--maxWait: 超时等待时间以毫秒为单位 1000等于60秒-->
+        <property name="maxWait" value="5000"/>
+        <!-- 在空闲连接回收器线程运行期间休眠的时间值,以毫秒为单位. -->
+        <property name="timeBetweenEvictionRunsMillis" value="120000"/>
+        <!--  在每次空闲连接回收器线程(如果有)运行时检查的连接数量 -->
+        <property name="numTestsPerEvictionRun" value="20"/>
+        <!-- 100 * 60 * 30  连接在池中保持空闲而不被空闲连接回收器线程-->
+        <property name="minEvictableIdleTimeMillis" value="180000"/>
+        <!-- 验证数据库连接的有效性-->
+        <property name="validationQuery" value="select 1"/>
+        <!-- 保存DruidDataSource的监控记录 -->
+        <property name="timeBetweenLogStatsMillis" value="300000" />
+        <!-- druid 连接池的 -->
+        <property name="filters" value="stat" />
     </bean>
-    <bean id="apiReadSqlMapClient" class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
+    <!-- 启动spring事务注解，事务注解尽在此 -->
+    <!--<tx:annotation-driven transaction-manager="transactionManager"/>-->
+    <!-- 事务配置(读写库) -->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="apiDataSource"></property>
+    </bean>
+    <!-- API Dao 配置-->
+    <bean id="apiSqlMapClient" class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
         <property name="configLocations">
             <list>
                 <value>classpath*:sqlmap-api-config.xml</value>
             </list>
         </property>
-        <property name="dataSource" ref="readDataSource"/>
+        <property name="dataSource" ref="apiDataSource"/>
     </bean>
 
     <bean id="dynamicIbatisConfig" class="com.lhb.plug.dynamicibatis.utils.Config">
         <property name="transactionManager" ref="transactionManager"/>
-        <property name="readSqlMapClient" ref="apiReadSqlMapClient"/>
-        <property name="writeSqlMapClient" ref="apiWriteSqlMapClient"/>
-    </bean>-->
+        <property name="readSqlMapClient" ref="apiSqlMapClient"/>
+        <property name="writeSqlMapClient" ref="apiSqlMapClient"/>
+    </bean>
 </beans>
