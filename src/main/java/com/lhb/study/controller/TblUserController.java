@@ -9,6 +9,8 @@ import com.lhb.study.util.enumtype.SexEnum;
 import com.lhb.study.util.frame.BeanResult;
 import com.lhb.study.util.paging.PageKit;
 import com.lhb.study.util.paging.PageListResult;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -29,6 +31,9 @@ import java.util.List;
 @Controller
 @RequestMapping("/user")
 public class TblUserController {
+
+    protected static final Logger log = LoggerFactory.getLogger(TblUserController.class);
+
     @Autowired
     TblUserService userServiceApi;
 
@@ -43,6 +48,7 @@ public class TblUserController {
     public void user_ajax(@ModelAttribute TblUserQuery query,  @RequestParam(required = false, value = "pageNo", defaultValue = "1") int pageNo,
                                    @RequestParam(required = false, value = "pageSize", defaultValue = "2") int pageSize,
                                    @RequestParam(required = false, value = "rowCount", defaultValue = "0") int rowCount, HttpServletResponse response) throws IOException {
+        log.info("user_ajax param>>{},{},{}",JSON.toJSONString(query),pageNo,rowCount);
         PageKit pageKit = new PageKit(pageNo,rowCount,pageSize);
         query.page(pageNo,pageSize);
         query.orderBy(new String[]{TblUser.COLUMN_ID+" DESC"});

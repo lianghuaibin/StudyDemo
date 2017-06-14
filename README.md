@@ -11,8 +11,8 @@ Documents
 -------------
 
 本项目主体为SpringBoot框架，main方法启动类：**com.lhb.study.springBoot.Application**
-:  主要配置参数在**application.properties**中；
-:  数据库访问的为本地数据库，大家可以导入**database.sql**的sql 到数据库中即可使用！
+:   主要配置参数在**application.properties**中；
+:   数据库访问的为本地数据库，大家可以导入**database.sql**的sql 到数据库中即可使用！
 
 
 > **主要功能:**
