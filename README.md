@@ -17,10 +17,13 @@ Documents
 
 > **主要功能:**
 
-> - SpringBoot结合Freemarker前端框架.
-> - SpringBoot结合iBatis模板使用，封装service及到层，省去编写sql语句！
+> -  SpringBoot结合Freemarker前端框架.
+> -  SpringBoot结合iBatis模板使用，封装service及到层，省去编写sql语句！
          需引入jar包：https://github.com/lianghuaibin/dynamic-ibatis.git
          自动生成代码类：ApiBaseDbMappingTool.
-> - 分页插件**jd.grid.js**.【css样式在**common.css**中】
+> -  分页插件**jd.grid.js**.【css样式在**common.css**中】
 >    示例：http://localhost:9090/user/skipPage
 > -  commonInit.js 封装了一些常用js方法.
+> -  自定义注解使用，查看包com.lhb.study.devSmallDemo.annotation
+>    参见：http://www.cnblogs.com/peida/archive/2013/04/24/3036689.html
+> -  lombok 简单应用，对于我来数 也就@slf4j 这个注解还有点用处，其他的完全没有必要

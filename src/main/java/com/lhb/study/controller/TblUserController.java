@@ -9,6 +9,7 @@ import com.lhb.study.util.enumtype.SexEnum;
 import com.lhb.study.util.frame.BeanResult;
 import com.lhb.study.util.paging.PageKit;
 import com.lhb.study.util.paging.PageListResult;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,11 +29,12 @@ import java.util.List;
  * @author lianghuaibin
  * @since 2017/6/9
  */
+@Slf4j
 @Controller
 @RequestMapping("/user")
 public class TblUserController {
 
-    protected static final Logger log = LoggerFactory.getLogger(TblUserController.class);
+//    protected static final Logger log = LoggerFactory.getLogger(TblUserController.class);
 
     @Autowired
     TblUserService userServiceApi;

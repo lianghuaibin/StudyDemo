@@ -16,6 +16,7 @@
 
 package com.lhb.study.ui;
 
+import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.annotation.DirtiesContext;
@@ -27,6 +28,7 @@ import org.springframework.test.context.web.WebAppConfiguration;
  * 
  * @author Dave Syer
  */
+@Slf4j
 @RunWith(SpringJUnit4ClassRunner.class)
 @WebAppConfiguration
 @DirtiesContext
@@ -35,6 +37,7 @@ public class SampleWebStaticApplicationTests {
 	@Test
 	public void testHome() throws Exception {
 		System.out.println("123");
+		log.info("测试 Lombok");
 
 	}
 
