@@ -24,9 +24,11 @@ Documents
 > -  commonInit.js 封装了一些常用js方法.
 
 #### <i class="icon-file"></i> 学习小Demo
-一些小功能的用法
+一些小功能的用法  程序路径 com.lhb.study.devSmallDemo
 > **主要功能:**
 > 
 > - 自定义注解使用，查看包com.lhb.study.devSmallDemo.annotation
 >    参见：http://www.cnblogs.com/peida/archive/2013/04/24/3036689.html
 > -  lombok 简单应用，对于我来说 也就@slf4j 这个注解感觉还不错，其他的比较鸡肋
+> -  CountDownLatch 一个同步辅助类的使用
+> -  zookeeper 简单应用示例
