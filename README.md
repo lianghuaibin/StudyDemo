@@ -32,3 +32,11 @@ Documents
 > -  lombok 简单应用，对于我来说 也就@slf4j 这个注解感觉还不错，其他的比较鸡肋
 > -  CountDownLatch 一个同步辅助类的使用
 > -  zookeeper 简单应用示例
+
+#### <i class="icon-file"></i> 页面效果Demo
+> **主要功能:**
+> 
+> -  一个基于html5 canvas绘制的网页背景效果,一款很有范的网站背景鼠标点线窝巢特效
+      http://localhost:9191/effects/nest
+> -  一个基于html5 canvas绘制的网页背景效果  canvasStar特效
+      http://localhost:9191/effects/star

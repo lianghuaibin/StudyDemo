@@ -186,43 +186,31 @@ public class BaseDistributedLock {
      * @throws Exception
      */
     protected String attemptLock(long time, TimeUnit unit) throws Exception{
-
         final long      startMillis = System.currentTimeMillis();
         final Long      millisToWait = (unit != null) ? unit.toMillis(time) : null;
-
         String          ourPath = null;
         boolean         hasTheLock = false;
         boolean         isDone = false;
         int             retryCount = 0;
 
         //网络闪断需要重试一试
-        while ( !isDone )
-        {
+        while ( !isDone ) {
             isDone = true;
-
-            try
-            {
+            try {
                 ourPath = createLockNode(client, path);
                 hasTheLock = waitToLock(startMillis, millisToWait, ourPath);
             }
-            catch ( ZkNoNodeException e )
-            {
-                if ( retryCount++ < MAX_RETRY_COUNT )
-                {
+            catch ( ZkNoNodeException e ) {
+                if ( retryCount++ < MAX_RETRY_COUNT ) {
                     isDone = false;
-                }
-                else
-                {
+                } else {
                     throw e;
                 }
             }
         }
-        if ( hasTheLock )
-        {
+        if ( hasTheLock ) {
             return ourPath;
         }
-
         return null;
     }
-
 }

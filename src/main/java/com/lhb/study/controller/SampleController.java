@@ -14,7 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class SampleController {
 
     @RequestMapping("/")
-    ModelAndView index() {
+    public ModelAndView index() {
         ModelAndView mv = new ModelAndView("index");
         return mv;
     }
