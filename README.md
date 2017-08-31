@@ -30,8 +30,9 @@ Documents
 > - 自定义注解使用，查看包com.lhb.study.devSmallDemo.annotation
 >    参见：http://www.cnblogs.com/peida/archive/2013/04/24/3036689.html
 > -  lombok 简单应用，对于我来说 也就@slf4j 这个注解感觉还不错，其他的比较鸡肋
-> -  CountDownLatch 一个同步辅助类的使用
-> -  zookeeper 简单应用示例
+> -  CountDownLatch 一个同步辅助类的使用  参见：CountDownLatchDemo.java
+> -  zookeeper 简单应用示例  参见：ZkClientDemo.java
+> -  mongodb 简单应用示例 参见：MongoTest.java
 
 #### <i class="icon-file"></i> 页面效果Demo
 > **主要功能:**

@@ -9,7 +9,7 @@ import com.lhb.study.util.ProxyAnnotationUtil;
 @MyClassAnno("1313")
 public class Test {
 
-    @MyMethodAnno("5555")
+    @MyMethodAnno(code = "0001",value = "method1")
     public void init(Integer i){
         System.out.println("Test init...");
     }
@@ -19,7 +19,7 @@ public class Test {
             MyClassAnno anno = (MyClassAnno) ProxyAnnotationUtil.getClassAnno(test,MyClassAnno.class);
             System.out.println(anno.value());
             MyMethodAnno myMethodAnno = (MyMethodAnno) ProxyAnnotationUtil.getMethodAnno(test,MyMethodAnno.class,"init",Integer.class);
-            System.out.println(myMethodAnno.value());
+            System.out.println(myMethodAnno.code()+"\t"+myMethodAnno.value());
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (NoSuchMethodException e) {
