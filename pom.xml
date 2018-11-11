@@ -99,6 +99,32 @@
 			<artifactId>zkclient</artifactId>
 			<version>0.9</version>
 		</dependency>
+		<dependency>
+			<groupId>com.sharksharding</groupId>
+			<artifactId>shark</artifactId>
+			<version>2.0.0.RELEASE</version>
+			<!--<exclusions>
+				<exclusion>
+					<artifactId>slf4j-log4j12</artifactId>
+					<groupId>org.slf4j</groupId>
+				</exclusion>
+			</exclusions>-->
+		</dependency>
+		<dependency>
+			<groupId>org.elasticsearch</groupId>
+			<artifactId>elasticsearch</artifactId>
+			<version>6.4.3</version>
+		</dependency>
+		<dependency>
+			<groupId>org.elasticsearch.client</groupId>
+			<artifactId>transport</artifactId>
+			<version>6.4.3</version>
+		</dependency>
+		<dependency>
+			<groupId>org.elasticsearch.client</groupId>
+			<artifactId>elasticsearch-rest-high-level-client</artifactId>
+			<version>6.4.3</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>

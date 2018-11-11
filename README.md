@@ -33,6 +33,7 @@ Documents
 > -  CountDownLatch 一个同步辅助类的使用  参见：CountDownLatchDemo.java
 > -  zookeeper 简单应用示例  参见：ZkClientDemo.java
 > -  mongodb 简单应用示例 参见：MongoTest.java
+> -  ElasticSearch 简单应用示例 参见：ElasticSearchDemo.java
 
 #### <i class="icon-file"></i> 页面效果Demo
 > **主要功能:**
