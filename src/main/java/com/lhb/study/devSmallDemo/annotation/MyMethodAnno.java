@@ -10,6 +10,6 @@ import java.lang.annotation.*;
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface MyMethodAnno {
-    public String code() default "code";
+    String code() default "code";
     public String value() default "method";
 }
